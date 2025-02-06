@@ -1,0 +1,202 @@
+.carousel-and-text {
+    /*background-color: #ffe1e0;*/
+    background-color: #FFBA76;
+}
+
+.carousel-inner img {
+    width: 100%; /* Largura ajustada ao container */
+    height: 500px; /* Altura específica, você pode alterar conforme necessário */
+    object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-and-text {
+    margin-top: 20px;
+}
+
+/* Mudar a cor dos ícones de navegação do carrossel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+    background-color: rgba(255, 255, 255, 0.5); /* Ajuste a cor e a opacidade conforme desejado */
+    border-radius: 50%; /* Torna os ícones circulares */
+    padding: 10px;
+}
+
+/*.segunda-parte {
+    margin-top: 20px;
+}*/
+
+.text-button-wrapper{
+    display: flex;
+    align-items: center; /* Alinha verticalmente ao centro */
+    gap: 10px; /* Espaço entre o botão e o texto */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+#secao-3{
+    background: linear-gradient(to right, #FFBA76 0%, #FFBA76 100%);
+    margin-top: 20px;
+}
+
+/* Estilo base da timeline */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Linha principal da timeline */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #ffe1e0; /* Cor da linha central */
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Centralizar a linha */
+    transform: translateX(-50%);
+}
+
+/* Estilo dos eventos da timeline */
+.timeline-event {
+    position: relative;
+    width: calc(50% - 60px); /* Ajuste para largura dos eventos */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo para eventos à esquerda */
+.timeline-event.left {
+    left: 0;
+    text-align: right; /* Alinhamento à direita */
+}
+
+/* Estilo para eventos à direita */
+.timeline-event.right {
+    left: 50%;
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+/* Linha que conecta evento com a linha central */
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    width: 25px;
+    height: 3px;
+    background-color: #fdb8b8; /* Cor da linha que conecta o evento */
+}
+
+/* Conectar eventos à esquerda */
+.timeline-event.left::before {
+    right: -25px; /* Ajuste para alinhar corretamente */
+}
+
+/* Conectar eventos à direita */
+.timeline-event.right::before {
+    left: -25px; /* Ajuste para alinhar corretamente */
+}
+
+
+
+
+/* Estilo para ícones */
+.timeline-icon {
+    position: absolute;
+    top: 0.1875rem;
+    width: 3.75rem;
+    height: 3.73rem;
+    background-color: #ff99a1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ícone para eventos à esquerda */
+.timeline-icon.left {
+    right: -45px; /* Ajuste para alinhar ícones à esquerda */
+}
+
+/* Ícone para eventos à direita */
+.timeline-icon.right {
+    left: 45px; /* Ajuste para alinhar ícones à direita */
+}
+
+/* Estilo do botão de "Saiba mais" */
+.btn-saiba-mais {
+    margin-top: 30px;
+    display: block;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Estilo da imagem da timeline */
+.img-timeline {
+    width: 100%;
+    max-width: 300px; /* Ajuste do tamanho máximo da imagem */
+    height: auto;
+}
+
+#formulário{
+    background-image: linear-gradient(to right, #FFE7E7, #FFE1E0);
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .timeline-event {
+        width: 100%;
+        left: 0 !important;
+        text-align: center;
+    }
+    .timeline-event::before {
+        display: none; /* Esconde a linha conectora para dispositivos menores */
+    }
+    .timeline-container::before {
+        left: 10px; /* Linha central mais perto da margem */
+    }
+    .timeline-icon {
+        left: 50%; /* Centralizar ícones */
+        transform: translateX(-50%);
+    }
+}
+
+
+
+.whatsapp-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 100%;
+    padding: 15px;
+    font-size: 15px;
+    z-index: 1000;
+}
+
+.fa-whatsapp {
+    margin-top: 0;
+}
+
+#secao-4 {
+    background-color: #FFE7E7;
+}
+
+/* Cor de fundo - Seção 6 */
+#secao-6 {
+    background-color: #DE1F26
+}

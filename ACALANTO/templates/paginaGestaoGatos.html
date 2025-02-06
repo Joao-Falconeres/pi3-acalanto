@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagens/Acalanto1.jpg" type="image/x-icon">
+    <title>Gestão Gatos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hidden-form {
+            display: none;
+        }
+        
+        body {
+            background-color: #FFBA76;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../static/img/logo-acalanto.png" alt="Logo Acalanto 1 - Gato/Cachorro" width="104" height="90" class="d-inline-block align-text-top">
+                <img src="../static/img/logo-acalanto.png" alt="Ícone da ONG - Projeto Acalanto. Lema: Mãos que ajudam pessoas e peludos." width="375" height="87" class="d-inline-block align-text-top">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Site</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="btn btn-danger">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container mt-5">
+            <h1 class="text-center">Gestão Gatos</h1>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <form class="form-inline mb-3 needs-validation" novalidate>
+                        <div class="form-group mb-2">
+                            <label for="filtro" class="sr-only">Filtrar:</label>
+                            <input type="text" class="form-control" id="filtro" placeholder="Digite para filtrar" required>
+                            <div class="invalid-feedback">Por favor, insira um termo para filtrar.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2 ml-2" id="filtrarBtn">Filtrar</button>
+                        <button type="button" class="btn btn-success mb-2 ml-2" id="criarGatoBtn">Cadastrar Gato</button>
+                    </form>
+                
+                    <form class="hidden-form needs-validation" id="gatoForm" novalidate>
+                        <div class="form-group">
+                            <label for="nomeGato">Nome Gato</label>
+                            <input type="text" class="form-control" id="nomeGato" value="Garfield" required>
+                            <div class="invalid-feedback">Por favor, insira o nome do gato.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="estadoGato">Estado Gato</label>
+                            <input type="text" class="form-control" id="estadoGato" value="DF" required>
+                            <div class="invalid-feedback">Por favor, insira o estado do gato.</div>
+                            <div class="invalid-feedback">Por favor, insira a região administrativa do gato.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="regiaoAdministrativaGato">Região Administrativa do Gato</label>
+                            <input type="text" class="form-control" id="regiaoAdministrativaGato" value="DF" required>
+                            <div class="invalid-feedback">Por favor, insira a região administrativa do gato.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="generoGato">Gênero Gato</label>
+                            <input type="text" class="form-control" id="generoGato" value="Masculino" required>
+                            <div class="invalid-feedback">Por favor, insira o gênero do gato.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="observacaoGato">Observação Gato</label>
+                            <textarea class="form-control" id="observacaoGato" rows="3" required>Gato laranja preguiçoso e amante de lasanha.</textarea>
+                            <div class="invalid-feedback">Por favor, insira uma observação.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="statusGato">Status Gato</label>
+                            <input type="text" class="form-control" id="statusGato" value="Disponível para adoção" required>
+                            <div class="invalid-feedback">Por favor, insira o status do gato.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="imagemGato">Imagem Gato</label>
+                            <input type="file" class="form-control-file" id="imagemGato" required>
+                            <div class="invalid-feedback">Por favor, insira uma imagem do gato.</div>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-warning mb-2 ml-2" id="alterarBtn">Alterar</button>
+                            <button type="button" class="btn btn-danger mb-2 ml-2" id="deletarBtn">Deletar</button>
+                        </div>
+                    </form>
+                    
+                    <form id="criarGatoForm" class="hidden-form needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="nomeGato">Nome Gato:</label>
+                            <input type="text" class="form-control" id="nomeGato" placeholder="Nome do Gato">
+                            <div class="invalid-feedback">Por favor, insira o estado do gato.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="estadoGato">Estado Gato:</label>
+                            <input type="text" class="form-control" id="estadoGato" placeholder="Estado do Gato" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regiaoAdministrativaGato">Região Administrativa do Gato</label>
+                            <input type="text" class="form-control" id="regiaoAdministrativaGato" value="DF" required>
+                            <div class="invalid-feedback">Por favor, insira a região administrativa do gato.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="generoGato">Gênero Gato:</label>
+                            <input type="text" class="form-control" id="generoGato" placeholder="Gênero do Gato" required>
+                            <div class="invalid-feedback">Por favor, insira o gênero do gato.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="observacaoGato">Observação Gato:</label>
+                            <input type="text" class="form-control" id="observacaoGato" placeholder="Observação do Gato" required>
+                            <div class="invalid-feedback">Por favor, insira uma observação.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="statusGato">Status Gato:</label>
+                            <input type="text" class="form-control" id="statusGato" value="Disponível" readonly>
+                            <div class="invalid-feedback">Por favor, insira o status do gato.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="imagemGato">Imagem Gato:</label>
+                            <input type="file" class="form-control" id="imagemGato" r>
+                            <div class="invalid-feedback">Por favor, insira uma imagem do gato.</div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </div>
+                    </form>
+                    <div id="mensagemSucesso" class="alert alert-success mt-3" style="display: none;">
+                        Gato cadastrado com sucesso
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="container mt-5">
+        <h3 class="text-center">Acompanhamento de Solicitações</h3>
+        <div class="d-flex justify-content-center mt-4">
+            <div class="card" style="width: 14rem;">
+                <img src="imagens/cad01.png" class="card-img-top" alt="Imagem do Gato">
+                <div class="card-body">
+                    <h5 class="card-title">Milk</h5>
+                    <p class="card-text">Nome Solicitante: Davi Parente</p>
+                    <p class="card-text">Contato Solicitante: davi.parente@ifb.edu.br</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../static/img/logo-acalanto.png" alt="Logo Acalanto 1 - Gato/Cachorro" width="104" height="90" class="d-inline-block align-text-top">
+                    <img src="../static/img/" alt="Ícone da ONG - Projeto Acalanto. Lema: Mãos que ajudam pessoas e peludos." width="375" height="87" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Topo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd[_{{{CITATION{{{_1{](https://github.com/emersonbrambila/zerodengue/tree/f41435a2d376c9caa347f0557c422bb317e52891/cadastro.php)[_{{{CITATION{{{_2{](https://github.com/AsterixBr/Trabalho/tree/af120649ff4a63524b45743375392f48909ef76f/cadastroProduto.php)[_{{{CITATION{{{_3{](https://github.com/andriand06/rumahguru/tree/fba802cf0efcd07f5ed996472ea7f76c0546bb34/app%2FViews%2Fhome%2Fhome.php)[_{{{CITATION{{{_4{](https://github.com/MiguelDiPane/Biblioratos/tree/92b5386fa85dd849a0f029ddda21077199f7e51d/views%2Fmodules%2Fnavegacion.php)[_{{{CITATION{{{_5{](https://github.com/dayou0420/ruby-dev-vn/tree/d9f1e8490b564c600f79ec008327b2c5df57ee14/ruby.php)[_{{{CITATION{{{_6{](https://github.com/gagas3113/uts_1402019041/tree/95f760ab6348f7119af08858f43580ca1bf172f1/uts_1402019041%2Findex.php)[_{{{CITATION{{{_7{](https://github.com/litposthinker/Tugas-aydin/tree/d488355075682b7260e2bc77502204a9221c1596/portofolio-gue%2Fdetail.php)[_{{{CITATION{{{_8{](https://github.com/Agilbay04/VLMS-JTI/tree/ac9dee3ecf421da62ff9cf5b76dee9de633b83de/bootstrap-4.6.0%2Fsite%2Fcontent%2Fdocs%2F4.6%2Fcomponents%2Fnavbar.md)[_{{{CITATION{{{_9{](https://github.com/liangyu-lin/GameProfessor/tree/03c5ef4719ce0c0e7762e2efadd28eba3f27614c/liangyu_lin%2Fhome_page.php)[_{{{CITATION{{{_10{](https://github.com/Isha-Prajapati-1208/WDL-MINI-PROJECT-COMPANY-MANAGEMENT-SYSTEM/tree/b6e3c0994c5bfb22f9560770746e6bc658a527ee/contact.php)[_{{{CITATION{{{_11{](https://github.com/rkustas/techarticles/tree/598d65a5c026d9ecd3c7f0258f4a44f93e7029d0/client%2Fpages%2F_document.js)

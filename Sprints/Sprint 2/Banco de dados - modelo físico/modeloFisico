@@ -1,0 +1,148 @@
+-- Criação do banco de dados
+CREATE DATABASE db_acalanto;
+
+-- Seleci3
+ona o banco de dados para uso
+USE db_acalanto;
+
+-- Criação da tabela administrador
+CREATE TABLE administrador (
+    id INT,
+    nome_administrador VARCHAR(50),
+    PRIMARY KEY (id)
+);
+
+-- Criação da tabela usuario
+CREATE TABLE usuario (
+	id INT,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE formulario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    rg VARCHAR(15),
+    orgao_expedidor VARCHAR(50),
+    cpf VARCHAR(14) UNIQUE, 
+    endereco VARCHAR(200),         
+    cidade VARCHAR(100),            
+    profissao VARCHAR(100), 
+    whatsapp VARCHAR(15),    
+    email VARCHAR(100),               -- E-mail
+    possui_outros_animais ENUM('Sim', 'Não'), 
+    quantidade_outros_animais INT,  
+    sao_castrados ENUM('Sim', 'Não') 
+);
+
+-- Criação da tabela tipo_animal
+CREATE TABLE tipo_animal (
+	id INT,
+    especie VARCHAR(45)
+);
+
+-- Criação da tabela status_gato
+CREATE TABLE status_animal (
+    id INT,
+    nome_status VARCHAR(50),
+    descricao_status VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+-- Criação da tabela tipo_pelo_animal
+CREATE TABLE tipo_pelo_animal (
+    id INT,
+    tipo_pelo VARCHAR(45),
+    PRIMARY KEY (id)
+);
+
+-- Criação da tabela cor_olhos_animal
+CREATE TABLE cor_olhos_animal (
+    id INT,
+    nome_cor_olhos VARCHAR(45),
+    PRIMARY KEY (id)
+);
+
+-- Criação da tabela regiao_administrativa_animal
+CREATE TABLE regiao_administrativa_animal (
+    id INT,
+    nome_regiao_administrativa VARCHAR(45),
+    PRIMARY KEY (id)
+);
+
+-- Criação da tabela animal
+CREATE TABLE animal (
+    id INT,
+    nome VARCHAR(50),
+    dt_nascimento DATE,
+    genero VARCHAR(20),
+    observacao VARCHAR(255),
+    id_administrador INT,
+    id_status INT,
+    id_tipo_pelo INT,
+    id_regiao_administrativa_animal INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_administrador) REFERENCES administrador(id),
+    FOREIGN KEY (id_status) REFERENCES status_animal(id),
+    FOREIGN KEY (id_tipo_pelo_animal) REFERENCES tipo_pelo(id),
+    FOREIGN KEY (id_regiao_administrativa_animal) REFERENCES regiao_administrativa_animal(id)
+);
+
+INSERT INTO tipo_pelo_animal (id, tipo_pelo) VALUES 
+(1, 'Longo'),
+(2, 'Curto'),
+(3, 'Liso'),
+(4, 'Cacheado'),
+(5, 'Sedoso'),
+(6, 'Denso'),
+(7, 'Aveludado'),
+(8, 'Ralo');
+
+INSERT INTO cor_olhos_animal (id, nome_cor_olhos) VALUES 
+(1, 'Azul'),
+(2, 'Verde'),
+(3, 'Amarelo'),
+(4, 'Castanho-claro'),
+(5, 'Castanho-escuro'),
+(6, 'Âmbar'),
+(7, 'Avelã'),
+(8, 'Heterocromia (duas cores diferentes)'),
+(9, 'Cinza'),
+(10, 'Preto');
+
+
+INSERT INTO regiao_administrativa_animal (id, nome_regiao_administrativa) VALUES 
+(1, 'Plano Piloto'),
+(2, 'Gama'),
+(3, 'Taguatinga'),
+(4, 'Brazlândia'),
+(5, 'Sobradinho'),
+(6, 'Planaltina'),
+(7, 'Paranoá'),
+(8, 'Núcleo Bandeirante'),
+(9, 'Ceilândia'),
+(10, 'Guará'),
+(11, 'Cruzeiro'),
+(12, 'Samambaia'),
+(13, 'Santa Maria'),
+(14, 'São Sebastião'),
+(15, 'Recanto das Emas'),
+(16, 'Lago Sul'),
+(17, 'Riacho Fundo'),
+(18, 'Lago Norte'),
+(19, 'Candangolândia'),
+(20, 'Águas Claras'),
+(21, 'Riacho Fundo II'),
+(22, 'Sudoeste/Octogonal'),
+(23, 'Varjão'),
+(24, 'Park Way'),
+(25, 'SCIA (Setor Complementar de Indústria e Abastecimento)/Estrutural'),
+(26, 'Sobradinho II'),
+(27, 'Jardim Botânico'),
+(28, 'Itapoã'),
+(29, 'SIA (Setor de Indústria e Abastecimento)'),
+(30, 'Vicente Pires'),
+(31, 'Fercal');
+
+INSERT INTO tipo_animal (id, especie) VALUES (1, 'Cachorro'),(2,'Gato');
+
+INSERT INTO status_animal (id, nome_status, descricao_status) VALUES (1, 'Disponível', 'Animal Disponível'), (2, 'Indisponível', 'Animal Indisponível');

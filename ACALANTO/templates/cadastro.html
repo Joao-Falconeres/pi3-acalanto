@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Gatos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo-acalanto.png') }}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #FFBA76;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+
+        .navbar-brand img {
+            max-height: 50px;
+        }
+
+        .hidden-form {
+            display: none;
+        }
+
+        main {
+            flex: 1;
+            width: 100%;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 p-1">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../static/img/logo-acalanto.png" alt="Logo Acalanto 1 - Gato/Cachorro">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Site</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="btn btn-danger">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+
+        <main class="container d-flex justify-content-center align-items-center flex-column"></main>
+        <div class="form-container mt-3 mb-3 row-5">
+            <form action="/cadastro" method="POST" id="criarGatoForm" class="needs-validation" novalidate>
+                <div class="mb-2">
+                    <label for="nomeGato" class="form-label fw-bold">Nome do Gato</label>
+                    <input type="text" class="form-control p-1" id="nomeGato" name="nomeGato" placeholder="Nome do Gato" required>
+                    <div class="invalid-feedback">Por favor, insira o nome do gato.</div>
+                </div>
+                <div class="mb-2">
+                    <label for="imunizadoGato" class="form-label fw-bold">Imunizado</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="imunizadoGato" id="imunizadoGato1" value="Sim" required>
+                        <label class="form-check-label" for="imunizadoGato1">Sim</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="imunizadoGato" id="imunizadoGato2" value="Não">
+                        <label class="form-check-label" for="imunizadoGato2">Não</label>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label for="regiaoAdministrativaGato" class="form-label fw-bold">Região Administrativa do Gato</label>
+                    <input type="text" class="form-control p-1" id="regiaoAdministrativaGato" name="regiaoAdministrativaGato" value="DF" required>
+                    <div class="invalid-feedback">Por favor, insira a região administrativa do gato.</div>
+                </div>
+                <div class="mb-2">
+                    <label for="generoGato" class="form-label fw-bold">Gênero do Gato</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="generoGato" id="generoGato1" value="Masculino" required>
+                        <label class="form-check-label" for="generoGato1">Masculino</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="generoGato" id="generoGato2" value="Feminino">
+                        <label class="form-check-label" for="generoGato2">Feminino</label>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label for="observacaoGato" class="form-label fw-bold">Observação do Gato</label>
+                    <input type="text" class="form-control p-1" id="observacaoGato" name="observacaoGato" placeholder="Observação do Gato" required>
+                    <div class="invalid-feedback">Por favor, insira uma observação.</div>
+                </div>
+                <div class="mb-2">
+                    <label for="statusGato" class="form-label fw-bold">Status do Gato</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="statusGato" id="statusGato1" value="Disponível" required>
+                        <label class="form-check-label" for="statusGato1">Disponível</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="statusGato" id="statusGato2" value="Indisponível">
+                        <label class="form-check-label" for="statusGato2">Indisponível</label>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label for="imagemGato" class="form-label fw-bold">Imagem do Gato</label>
+                    <input type="file" class="form-control p-1" id="imagemGato" name="imagemGato" required>
+                    <div class="invalid-feedback">Por favor, insira uma imagem do gato.</div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </div>
+            </form>
+            <div id="mensagemSucesso" class="alert alert-success mt-3" style="display: none;">
+                Gato cadastrado com sucesso!
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container text-center">
+            <p>Cadastro de Gatos - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        (function () {
+            'use strict'
+
+            var forms = document.querySelectorAll('.needs-validation')
+
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+
+</html>

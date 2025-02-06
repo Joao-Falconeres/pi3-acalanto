@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\static\styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="imagens/Acalanto1.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <title>Projeto Acalanto</title>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <img src="../static/img/logo-acalanto.png" alt="Logo Acalanto 1 - Gato/Cachorro" width="90"height="70"class="d-inline-block align-text-top">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold" aria-current="page" href="#secao-1">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="#secao-2">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="#secao-3">Adote</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="#secao-4">Perguntas</a>
+                        </li>
+                        <li class="nav-item"></li>
+                            <a class="nav-link fw-bold" href="#secao-6">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Login</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>        
+    </header>
+
+    <main>
+            <!-- Seção para carrossel e texto lado a lado -->
+            <section class="container-fluid carousel-and-text mt-auto p-5" id="secao-1">
+                <div class="row ">
+                    <!-- Coluna de Texto -->
+                    <div class="col-md-4 mt-auto mb-5 ">
+                        <h1>Adotar é tudo de bom!<br>
+                        <a href="#secao-3" class="btn btn-primary btn-lg btn btn-danger">Quero adotar</a>
+                    </div>
+
+                    <!-- Coluna do Carrossel -->
+                    <div class="col-md-8">
+                        <img src="../static/img/catsinicio.png" class="img-fluid" alt="...">
+                    </div>
+                </div>
+                
+            </section>
+            <section id="secao-2" class=" container-fluid terceira-parte mt-5 p-4" >
+                <h1 class="title text-center fs-1">Conheça a ONG Acalanto</h1>
+                <p class="text-center mt-3 fs-4">
+                    Existem muitos <strong>gatos a espera de um lar</strong> e com muito amor para oferecer.<br> Nós fazemos essa ponte
+                    para que você adote um amigo e faça a <br>diferença na vida de um animal carente.
+                </p>
+                
+                <div class="row">
+                    <!-- Coluna da Imagem -->
+                    <div class="col-md-4 mt-auto">
+                        <img src="../static/img/gatGtimiline.png" class="img-fluid img-timeline rounded float-start" alt="Gato esperando adoção">
+                    </div>
+        
+                    <!-- Coluna da Timeline -->
+                    <div class="col-md-8 mt-5">
+                        <div class="timeline-container">
+                            <!-- Evento 1 -->
+                            <div class="timeline-event left">
+                                <div class="timeline-content">
+                                    <h3>2016</h3>
+                                    <p>Primeira Adoção Independente</p>
+                                </div>
+                            </div>
+        
+                            <!-- Evento 2 -->
+                            <div class="timeline-event right">
+                                <div class="timeline-content">
+                                    <h3>2017</h3>
+                                    <p>Lorem ipsum dolor.</p>
+                                </div>
+                            </div>
+        
+                            <!-- Evento 3 -->
+                            <div class="timeline-event left">
+                                <div class="timeline-content">
+                                    <h3>2018</h3>
+                                    <p>Primeira Adoção Independente</p>
+                                </div>
+                            </div>
+        
+                            <!-- Evento 4 -->
+                            <div class="timeline-event right">
+                                <div class="timeline-content">
+                                    <h3>2019</h3>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Botão de "Saiba Mais" -->
+                <a href="#" class="btn-saiba-mais mb-5">Saiba mais</a>
+        </section>
+        
+
+    </main>
+    </section>
+       
+        <section id="secao-3" class="container-fluid mt-auto p-4">
+                    <h1 class="display-4 text-center pb-3 pt-4" style="color: rgb(255, 255, 255);">Gatos para adoção</h1>
+                    
+                    <div class="row d-flex justify-content-center align-items-center pt-3">
+                        <!-- Coluna para a Região Administrativa -->
+                        <div class="col-md-2">
+                            <select id="inputState" class="form-select">
+                                <option selected>Cidade:</option>
+                                <option>Plano Piloto</option>
+                                <option>Gama</option>
+                                <option>Taguatinga</option>
+                                <option>Brazlândia</option>
+                                <option>Sobradinho</option>
+                                <option>Planaltina</option>
+                                <option>Paranoá</option>
+                                <option>Núcleo Bandeirante</option>
+                                <option>Ceilândia</option>
+                                <option>Guará</option>
+                                <option>Cruzeiro</option>
+                                <option>Samambaia</option>
+                                <option>Santa Maria</option>
+                                <option>São Sebastião</option>
+                                <option>Recanto das Emas</option>
+                                <option>Lago Sul</option>
+                                <option>Riacho Fundo</option>
+                                <option>Lago Norte</option>
+                                <option>Candangolândia</option>
+                                <option>Águas Claras</option>
+                                <option>Riacho Fundo II</option>
+                                <option>Sudoeste/Octogonal</option>
+                                <option>Varjão</option>
+                                <option>Park Way</option>
+                                <option>SCIA (Setor Complementar de Indústria e Abastecimento)</option>
+                                <option>Sobradinho II</option>
+                                <option>Jardim Botânico</option>
+                                <option>Itapoã</option>
+                                <option>Vicente Pires</option>
+                                <option>Fercal</option>
+                                <option>Sol Nascente/Pôr do Sol</option>
+                                <option>Arniqueiras</option>
+                            </select>
+                        </div>
+                
+                        <!-- Coluna para o sexo -->
+                        <div class="col-md-2">
+                            <select id="inputState" class="form-select">
+                                <option selected>Gênero:</option>
+                                <option>Macho</option>
+                                <option>Fêmea</option>
+                            </select>
+                        </div>
+                        <a class="btn btn-danger col-md-2" href="#" role="button">Buscar</a>
+
+                    </div>
+                
+                
+                </div><br>
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Card 1 -->
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src="../static/img/cad01.png" class="card-img-top" alt="Imagem do gato Milk">
+                                <div class="card-body">
+                                   <!-- <img src="./imagens/mmacho.png" style="width: 2rem;" alt="Ícone de gênero macho">-->
+                                    <h5 class="card-title">Milk</h5>
+                                    <p class="card-text">Macho / Filhote</p>
+                                    <p class="card-text">Samambaia</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Card 2 -->
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src="../static/img/cad02.png" class="card-img-top" alt="Imagem do gato Tini">
+                                <div class="card-body">
+                                  <!--  <img src="./imagens/mmacho.png" style="width: 2rem;" alt="Ícone de gênero macho">-->
+                                    <h5 class="card-title">Tini</h5>
+                                    <p class="card-text">Macho / Filhote</p>
+                                    <p class="card-text">Recanto das Emas</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Card 3 -->
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src="../static/img/cad03.png" class="card-img-top" alt="Imagem do gato Zion">
+                                <div class="card-body">
+                                    <!--<img src="./imagens/Group 322.png" style="width: 2rem;" alt="Ícone de gênero macho">-->
+                                    <h5 class="card-title">Zion</h5>
+                                    <p class="card-text">Macho / Filhote</p>
+                                    <p class="card-text">Plano Piloto</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Card 4 -->
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src="../static/img/cad04.png" class="card-img-top" alt="Imagem do gato Bird">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bird</h5>
+                                    <p class="card-text">Macho / Filhote</p>
+                                    <p class="card-text">Sobradinho I</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center pb-3 mt-3">
+                    <a href="./verTodos.html" class="btn btn-danger btn-lg col-3 mb-4" tabindex="-1" role="button" aria-disabled="true">Ver Todos</a>
+                </div>
+        </section>
+
+    
+    <section id="secao-4" class="container-fluid pt-5">
+        <div class="d-flex flex-column justify-content-center align-items-center vh-100">
+            <h2 class="mb-3">Perguntas Frequentes</h2>
+            <div class="accordion mt-2" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Como posso apoiar a ONG?
+                  </button>
+                </h2>
+                <div id="collapseOne" class="btn btn-danger accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                     Doando alimentos, medicamentos e brinquedos para os gatos; ou fazendo doações financeiras para ajudar com os custos operacionais e tratamentos veterinários. Nos contacte pela seção "Contato."
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    As adoções são gratuitas?
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="btn btn-danger accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Sim, as adoções na “Adote um Amigo” são gratuitas. Nosso objetivo é garantir que cada gato encontre um lar amoroso e responsável, sem que o custo seja uma barreira.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Os gatos para adoção são castrados?
+                  </button>
+                </h2>
+                <div id="collapseThree" class="btn btn-danger accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Sim, todos os gatos disponíveis para adoção na “Adote um Amigo” são devidamente cadastrados. Eles passam por um processo de avaliação veterinária, são vacinados, vermifugados e castrados antes de serem disponibilizados para adoção.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    O que preciso saber antes de adotar um gato?
+                  </button>
+                </h2>
+                <div id="collapseFour" class="btn btn-danger accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Gatos podem viver até 20 anos, então é um compromisso a longo prazo; eles precisam de um ambiente seguro e enriquecido, com brinquedos e arranhadores; e requerem cuidados veterinários regulares, incluindo vacinas e controle de parasitas. 
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Como fazer a adaptação em casa de um gato adotado?
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Inicialmente, mantenha o novo gato em um espaço separado com tudo o que ele precisa: comida, água, caixa de areia e brinquedos. Permita que ele explore a casa gradualmente e, se houver outros animais, faça a introdução de forma lenta e supervisionada.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+   <!--<section class="quinta-parte">A DESENVOLVER</section>-->
+
+    <section id="secao-6" class="container-fluid p-5">
+        <div class="row background-custom">
+            <div class="col-md-6 mt-5">
+                <h2 class="text-white">Fale conosco agora mesmo</h2>
+                <form>
+                    <div class="form-group">
+                        <label class="text-white mt-3" for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white mt-2" for="email">E-mail:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Seu e-mail">
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white mt-2" for="celular">Celular:</label>
+                        <input type="tel" class="form-control" id="celular" placeholder="Seu celular">
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white mt-2" for="mensagem">Mensagem:</label>
+                        <textarea class="form-control" id="mensagem" rows="5" placeholder="Sua mensagem"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg mt-2 btn btn-warning">Enviar mensagem</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <img src="../static/img/gato-secao6.png" alt="Gato - Seção 6" class="img-fluid" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </section>
+    <footer >
+        <!-- Rodapé -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <!--<img src="./imagens/logop.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top">-->
+                    <img src="../static/img/logo-acalanto.png" alt="Logo Acalanto 1 - Gato/Cachorro" width="104"height="90"class="d-inline-block align-text-top">
+                    <img src="../static/img/logo-10-anos.png" alt="Ícone da ONG - Projeto Acalanto. Lema: Mãos que ajudam pessoas e peludos."
+                    width="100"height="87"class="d-inline-block align-text-top">
+                    
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"></li>
+                            <a class="nav-link" href="#">Topo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </nav>    
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <!-- Botão de WhatsApp -->
+    <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=5599111112222" target="_blank"
+        aria-label="Chat on WhatsApp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+  <!-- <script src="./script.js"></script> -->
+  <!-- <script>console.log("JavaScript no final do corpo está funcionando!");</script> -->
+</body>
+
+</html>
